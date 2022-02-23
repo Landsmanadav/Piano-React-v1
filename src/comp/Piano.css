@@ -1,0 +1,16 @@
+.piano {
+    display: flex;
+    flex-direction: row;
+   /* align-items: center; */
+   border: #ffffff solid;
+
+}
+.notePlaying{
+    margin-top: 5px;
+    /* border: solid; */
+    height: 10vh;
+    width: 10vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -1,0 +1,35 @@
+.key {
+    background-color: white;
+    height: 200px;
+    width: 100px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-indent:-9999px;
+    /* border: green solid; */
+}
+
+.keytext {
+    position: relative;
+    color: black;
+    font-weight: 600;
+    font-size: 36px;
+    margin-top: 240px;
+    pointer-events: none;
+    display: none;
+    /* color: transparent; */
+}
+
+.key.sharp {
+    position: relative;
+    background-color: grey;
+    margin-left: -42px;
+    margin-right: -42px;
+    height: 120px;
+    width: 80px;
+    z-index: 2;
+
+}
+
+.key.pressed, .key.sharp.pressed {
+    background-color: #00d8ff;
+}
