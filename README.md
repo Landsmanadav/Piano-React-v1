@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+change 1
+>>>>>>> 81094dd352f1bd67b5280fdfc0761bf6d7e39f97
 # Nadav Landsman - Piano React Project v1
 
 ### Welcome to my first piano !
