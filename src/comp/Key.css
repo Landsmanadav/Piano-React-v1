@@ -33,3 +33,30 @@
 .key.pressed, .key.sharp.pressed {
     background-color: #00d8ff;
 }
+
+/* Snir Responsive Update */
+.key:active,
+.key.sharp:active {
+    background-color: #00d8ff;
+}
+@media screen and (max-width: 550px) {
+    .key {
+        height: 200px;
+        width: 43px;
+    }
+    .key.sharp {
+        margin-left: -17px;
+        margin-right: -17px;
+        width: 29px;
+    }
+}
+@media screen and (min-width: 550px) and (max-width: 700px) {
+    .key {
+        width: 70px;
+    }
+    .key.sharp {
+        margin-left: -32px;
+        margin-right: -32px;
+        width: 60px;
+    }
+}

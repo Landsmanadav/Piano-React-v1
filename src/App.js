@@ -44,11 +44,8 @@ function App() {
   // }
   return (
     <div className="App">
-    
       <header className="App-header">
         <Piano sampler={sampler} />
-
-
         <div className="Sliders">
           <CircularSlider
             label="Reverb"
