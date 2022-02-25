@@ -141,15 +141,23 @@ export default function Piano({ sampler }) {
         document.addEventListener('keyup', handleKeyUp);
         document.addEventListener('mousedown', clickDown)
         document.addEventListener('mouseup', clickUp)
+        document.addEventListener('touchstart', clickDown)
+        document.addEventListener('touchend', clickUp)
         document.addEventListener('mouseover', clickOver)
+        document.addEventListener('touchmove', clickOver)
         document.addEventListener('mouseout', clickOut)
+        // document.addEventListener('touchmove', clickOut)
         return () => {
             document.removeEventListener("keydown", handleKeyDown)
             document.removeEventListener('keyup', handleKeyUp);
             document.removeEventListener('mousedown', clickDown)
             document.removeEventListener('mouseup', clickUp)
+            document.removeEventListener('touchstart', clickDown)
+            document.removeEventListener('touchend', clickUp)
+            document.removeEventListener('touchmove', clickOver)
             document.removeEventListener('mouseover', clickOver)
             document.removeEventListener('mouseout', clickOut)
+            // document.removeEventListener('touchmove', clickOut)
             // console.log("mount")
 
         }
@@ -191,6 +199,13 @@ export default function Piano({ sampler }) {
                 <h1>{KEY_TO_NOTE[updatedPressedKeys[3]]}</h1>
                 <h1>{KEY_TO_NOTE[updatedPressedKeys[4]]}</h1>
                 <h1>{KEY_TO_NOTE[updatedPressedKeys[5]]}</h1>
+                <h1>{KEY_TO_NOTE[updatedPressedKeys[6]]}</h1>
+                <h1>{KEY_TO_NOTE[updatedPressedKeys[7]]}</h1>
+                <h1>{KEY_TO_NOTE[updatedPressedKeys[8]]}</h1>
+                <h1>{KEY_TO_NOTE[updatedPressedKeys[9]]}</h1>
+                <h1>{KEY_TO_NOTE[updatedPressedKeys[10]]}</h1>
+                <h1>{KEY_TO_NOTE[updatedPressedKeys[11]]}</h1>
+                <h1>{KEY_TO_NOTE[updatedPressedKeys[12]]}</h1>
             </div>
         </div>
     )

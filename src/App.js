@@ -3,6 +3,42 @@ import Piano from './comp/Piano';
 import React, { useState, useEffect, useRef } from 'react'
 import * as Tone from 'tone'
 import CircularSlider from '@fseehawer/react-circular-slider';
+import { KEY_TO_NOTE, VALID_KEYS } from './global/constants';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+const bull = (
+  <Box
+    component="span"
+    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
+  >
+    •
+  </Box>
+);
+
+const card = (
+  <React.Fragment>
+    <CardContent>
+      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        Manuals
+      </Typography>
+      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        Keys
+      </Typography>
+      <Typography variant="body2">
+        {VALID_KEYS.map(key => <span style={{ margin: "3px" }}>
+          {key}:
+          {KEY_TO_NOTE[key].lenght == 1 ? KEY_TO_NOTE[key].toUpperCase() :
+            KEY_TO_NOTE[key].charAt(0).toUpperCase() + KEY_TO_NOTE[key].slice(1)}</span>)}
+      </Typography>
+    </CardContent>
+  </React.Fragment >
+)
+
+
 
 function App() {
 
@@ -44,23 +80,33 @@ function App() {
   // }
   return (
     <div className="App">
-      <header className="App-header">
-        <Piano sampler={sampler} />
+      <div className="App-header">
+        {/* <Box sx={{ minWidth: 730 }}>
+          <Card variant="outlined">{card}</Card>
+        </Box> */}
+        {/* <img
+          width="1100px"
+          src={`https://img.ksp.co.il/item/99165/b_3.jpg?v=5`}
+          loading="lazy"
+        /> */}
         <div className="Sliders">
           <CircularSlider
             label="Reverb"
-            min={1}
+            min={0}
             max={180}
-            width={140}
-            knobSize={40}
-            labelColor="#808080"
-            knobColor="#808080"
-            progressColorFrom="#808080"
-            progressColorTo="#808080"
-            progressSize={8}
+            width={120}
+            knobSize={30}
+            labelFontSize={"0.8rem"}
+            labelBottom={true}
+            labelColor="#005a58"
+            knobColor="#005a58"
+            progressColorFrom="#00bfbd"
+            progressColorTo="#005a58"
+            progressSize={10}
             trackColor="#eeeeee"
-            trackSize={1}
-            data={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]} //...
+            trackSize={5}
+            hideKnob={false}
+            data={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]}
             dataIndex={0}
             knobPosition="bottom"
             progressLineCap="flat"
@@ -71,18 +117,21 @@ function App() {
           />
           <CircularSlider
             label="Tremolo"
-            min={1}
+            min={0}
             max={180}
-            width={140}
-            knobSize={40}
-            labelColor="#808080"
-            knobColor="#808080"
-            progressColorFrom="#808080"
-            progressColorTo="#808080"
-            progressSize={8}
+            width={120}
+            knobSize={30}
+            labelFontSize={"0.8rem"}
+            labelBottom={true}
+            labelColor="#005a58"
+            knobColor="#005a58"
+            progressColorFrom="#00bfbd"
+            progressColorTo="#005a58"
+            progressSize={10}
             trackColor="#eeeeee"
-            trackSize={1}
-            data={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]} //...
+            trackSize={5}
+            hideKnob={false}
+            data={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]}
             dataIndex={0}
             knobPosition="bottom"
             progressLineCap="flat"
@@ -90,9 +139,12 @@ function App() {
               tremolo.set({
                 wet: value
               })}
-          />
+          >
+          </CircularSlider >
         </div>
-      </header>
+        <Piano sampler={sampler} />
+
+      </div>
     </div >
   );
 }

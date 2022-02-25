@@ -1,11 +1,18 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+  }
+  /* html, body {
+    touch-action: auto;
+} */
 .key {
     background-color: white;
-    height: 200px;
-    width: 100px;
-    border: 2px solid black;
+    height: 300px;
+    width: 150px;
+    border: 1px solid black;
     cursor: pointer;
     text-indent:-9999px;
-    /* border: green solid; */
+    box-sizing: border-box;
 }
 
 .keytext {
@@ -22,9 +29,12 @@
 .key.sharp {
     position: relative;
     background-color: grey;
-    margin-left: -42px;
-    margin-right: -42px;
-    height: 120px;
+    margin-left: -40px;
+    margin-right: -40px;
+    height: 180px;
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius:10px ;
+    border-color: black;
     width: 80px;
     z-index: 2;
 
@@ -35,28 +45,39 @@
 }
 
 /* Snir Responsive Update */
-.key:active,
-.key.sharp:active {
-    background-color: #00d8ff;
-}
 @media screen and (max-width: 550px) {
+    .key:active,
+    .key.sharp:active {
+        background-color: #00d8ff;
+    }
     .key {
         height: 200px;
-        width: 43px;
+        width: 50px;
     }
     .key.sharp {
-        margin-left: -17px;
-        margin-right: -17px;
+        margin-left: -14.5px;
+        margin-right: -14.5px;
         width: 29px;
+        height: 120px;
+    }
+     .Sliders{
+      width: 350px;
     }
 }
-@media screen and (min-width: 550px) and (max-width: 700px) {
+@media screen and (min-width: 550px) and (max-width: 926px) {
+    .key:active,
+    .key.sharp:active {
+        background-color: #00d8ff;
+    }
     .key {
-        width: 70px;
+    height: 220px;
+    width: 110px;
+        
     }
     .key.sharp {
-        margin-left: -32px;
-        margin-right: -32px;
-        width: 60px;
+        height: 120px;
     }
+    .Sliders{
+        width: 770px;
+      }
 }

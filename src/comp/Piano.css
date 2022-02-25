@@ -1,9 +1,7 @@
 .piano {
     display: flex;
     flex-direction: row;
-   /* align-items: center; */
-   border: #ffffff solid;
-
+ 
 }
 .notePlaying{
     margin-top: 5px;
@@ -14,3 +12,19 @@
     justify-content: space-around;
     align-items: center;
 }
+
+
+@media screen and (max-width: 550px) {
+    .piano {
+       
+    }
+   
+}
+/* @media screen and (min-width: 550px) and (max-width: 700px) {
+    .piano {
+        position:unset;
+    }
+    .App-header img{
+        display: none;
+    }
+} */
